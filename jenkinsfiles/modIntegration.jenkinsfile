@@ -27,6 +27,5 @@ pipeline {
                 ssh flynn@testvm ls -la /home/flynn/server/mods
             }
         }
-
     }
 }
