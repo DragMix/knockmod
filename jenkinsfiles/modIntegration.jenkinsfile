@@ -34,14 +34,7 @@ pipeline {
                 sh 'ssh flynn@testvm /home/flynn/server/stop.sh'
                 sh 'scp flynn@testvm:/home/flynn/server/logs/latest.log ~/'
                 sh 'result=`grep ~/latest.log -e "Done" | wc -l`'
-                sh 'if [ "$result" = "1" ]
-                    then
-                    echo "------Test stable!------"
-                    exit 0
-                    else
-                    echo "------Test failed!------"
-                    exit 1
-                    fi'
+                sh 'if [ "$result" = "1" ] then echo "------Test stable!------" exit 0 else echo "------Test failed!------"  exit 1 fi'
             }
         }
 
