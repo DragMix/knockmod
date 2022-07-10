@@ -6,6 +6,7 @@ pipeline {
     tools {
             gradle "gradle-builder1"
     }
+    triggers { pollSCM('* * * * *')}
 
     stages {
         stage('Git checkout') {
@@ -48,6 +49,6 @@ pipeline {
             }
         }
     }
-    
+
 }
 
