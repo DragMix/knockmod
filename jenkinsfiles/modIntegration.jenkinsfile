@@ -1,0 +1,25 @@
+properties([pipelineTriggers([githubPush()])])
+
+pipeline {
+    agent any
+    tools {
+            gradle "GRADLE_LATEST"
+    }
+
+    stages {
+        stage('Git checkout') {
+            steps {
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: '*/main']],
+                    userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/DragMix/knockmod.git']]
+                ])
+            }
+        }
+        stage('Gradle mod build') {
+            steps {
+            sh `gradle --version`
+            }
+        }
+    }
+}
