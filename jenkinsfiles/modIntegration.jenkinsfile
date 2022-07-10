@@ -3,7 +3,7 @@ properties([pipelineTriggers([githubPush()])])
 pipeline {
     agent any
     tools {
-            gradle 'Gradle-5.0'
+            gradle "gradle-builder1"
     }
 
     stages {
