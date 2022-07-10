@@ -21,7 +21,12 @@ pipeline {
                 sh 'gradle build'
             }
         }
-        
+        stage('Send artifact to test server') {
+            steps {
+                sh 'scp /var/lib/jenkins/workspace/modIntegration/build/libs/*.jar flynn@testvm:/home/flynn/server/mods/'
+                sh 'ssh flynn@testvm ls -la /home/flynn/server/mods'
+            }
+        }
     }
 }
 
