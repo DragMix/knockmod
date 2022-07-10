@@ -1,5 +1,7 @@
 properties([pipelineTriggers([githubPush()])])
 
+properties([concurrentBuilds(false)])
+
 pipeline {
     agent any
     options { timestamps () }
