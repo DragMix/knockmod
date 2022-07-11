@@ -6,7 +6,6 @@ pipeline {
     tools {
             gradle "gradle-builder1"
     }
-    triggers { pollSCM('0 * * * *')}
 
     stages {
         stage('Git checkout') {
