@@ -11,4 +11,5 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, knockmod.MOD_ID);
 
     public static final RegistryObject<Item> NEPHRITE = ITEMS.register("nephrite", MaterialItem::new);
+    public static final RegistryObject<Item> NEPHRITE_STICK = ITEMS.register("nephrite_stick", MaterialItem::new);
 }
